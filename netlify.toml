@@ -3,6 +3,12 @@
   publish = "dist"
 
 [[redirects]]
+  from = "/api/*"
+  to = "https://script.google.com/macros/s/AKfycbz6f1191gV6sMVQq_0g_u08fcpp9Dqm8j2PKMLUImcJrDGWvzYuy6aNXRxqhXKgfrUZ/exec/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
