@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Colores base — se sobreescriben con los valores de CONFIG de Google Sheets */
+  --color-primary-50:  238 242 255;
+  --color-primary-100: 224 231 255;
+  --color-primary-500: 99 102 241;
+  --color-primary-600: 79 70 229;
+  --color-primary-700: 67 56 202;
+  --color-accent-500:  245 158 11;
+  --color-accent-600:  217 119 6;
+}
+
+@layer base {
+  html { @apply h-full; }
+  body { @apply h-full bg-gray-50 text-gray-900 antialiased; }
+  #root { @apply h-full; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl
+           bg-primary-600 text-white font-medium text-sm
+           active:scale-95 transition-all duration-150
+           disabled:opacity-50 disabled:pointer-events-none;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl
+           bg-white text-gray-700 font-medium text-sm border border-gray-200
+           active:scale-95 transition-all duration-150;
+  }
+  .card {
+    @apply bg-white rounded-2xl shadow-sm border border-gray-100 p-4;
+  }
+  .input {
+    @apply w-full rounded-xl border border-gray-200 px-3 py-2.5 text-sm
+           focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent
+           placeholder:text-gray-400;
+  }
+  .label {
+    @apply block text-xs font-medium text-gray-600 mb-1;
+  }
+}
