@@ -23,7 +23,7 @@ export default function Caja() {
     queryFn: () => api.get<MovimientoCaja[]>('getCaja'),
   })
 
-  const saldo = movimientos.length > 0 ? movimientos[movimientos.length - 1].saldoAcumulado : 0
+  const saldo    = movimientos.at(-1)?.saldoAcumulado ?? 0
   const filtrados = movimientos.filter(m => tipo === 'todos' || m.tipo === tipo).reverse()
 
   return (
